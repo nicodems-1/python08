@@ -62,7 +62,7 @@ def process_data_brother() -> None:
         )
 
 
-def process_data() -> dict:
+def process_data() -> Any:
     print("Processing 1000 data points...")
     import pandas
     import numpy
@@ -72,13 +72,13 @@ def process_data() -> dict:
     return df
 
 
-def analyze_data(df: dict) -> dict:
+def analyze_data(df: Any) -> dict:
     print("Analyzing Matrix data...")
     stats = {"minimum": df["y"].min(), "maximum": df["y"].max()}
     return stats
 
 
-def generate_visual(df: dict) -> None:
+def generate_visual(df: Any) -> None:
     print("Generating visualization...")
     import matplotlib.pyplot as pl
 
