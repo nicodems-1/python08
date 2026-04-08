@@ -62,7 +62,7 @@ def process_data_brother() -> None:
         )
 
 
-def process_data()-> dict:
+def process_data() -> dict:
     print("Processing 1000 data points...")
     import pandas
     import numpy
@@ -82,9 +82,10 @@ def generate_visual(df: dict) -> None:
     print("Generating visualization...")
     import matplotlib.pyplot as pl
 
-    pl.plot(df['x'], df['y'], label="cos(x)", color="blue")
+    pl.plot(df["x"], df["y"], label="cos(x)", color="blue")
     pl.title("Cosinus function")
     pl.savefig("matrix_analysis")
 
 
-process_data_brother()
+if __name__ == "__main__":
+    process_data_brother()
