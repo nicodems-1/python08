@@ -1,15 +1,16 @@
 from dotenv import load_dotenv
 import os
 
-def configuration():
+
+def configuration() -> None:
     print("ORACLE STATUS: Reading the Matrix...\n")
     load_dotenv()
     print("Configuration loaded:")
-    api_key = os.getenv("API_KEY")
-    mode = os.getenv('MATRIX_MODE', 'development')
+    api_key: str | None = os.getenv("API_KEY")
+    mode: str = os.getenv("MATRIX_MODE", "development")
     print(f"Mode: {mode}")
     if os.getenv("DATABASE_URL") is None:
-        print("Database: Not connected to local instance")
+        print("Database: Not connected")
     elif mode == "production":
         print("Database: connected to PRODUCTION cluster")
     else:
@@ -35,6 +36,7 @@ def configuration():
         print("[WARNING] No .env file found, relying on system variables")
     print("[OK] Production overrides available\n")
     print("The oracle  sees all configurations")
+
 
 if __name__ == "__main__":
     configuration()

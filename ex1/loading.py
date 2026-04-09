@@ -1,5 +1,6 @@
 from importlib.util import find_spec
 from importlib.metadata import version
+from typing import Any
 
 
 def checking_dependencies() -> bool:
